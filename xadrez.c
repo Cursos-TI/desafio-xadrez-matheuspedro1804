@@ -10,7 +10,7 @@
  * - Rainha: 8 casas para a esquerda
  */
 
-int main() {
+/* int main() {
     // Definição de constantes para os limites de movimento
     const int MOV_BISPO = 5;
     const int MOV_TORRE = 5;
@@ -44,6 +44,39 @@ int main() {
         contadorRainha++;
     } while (contadorRainha <= MOV_RAINHA);
     printf("\n");
+
+    return 0;
+}  */ 
+
+
+#include <stdio.h>
+
+int main() {
+    // Definimos as constantes para o movimento em "L"
+    // 2 casas para baixo e 1 para a esquerda
+    const int BAIXO = 2;
+    const int ESQUERDA = 1;
+
+    printf("Movimentação do Cavalo (Em L - Baixo e Esquerda):\n");
+
+    // Loop Externo (FOR): Controla o movimento vertical (para baixo)
+    for (int i = 1; i <= BAIXO; i++) {
+        
+        // Loop Interno (WHILE): Controla o movimento horizontal (para esquerda)
+        // Ele só executa completamente após o loop externo finalizar sua lógica
+        int j = 1;
+        while (j <= ESQUERDA) {
+            // Se for a última iteração do movimento para baixo, 
+            // fazemos o movimento para a esquerda para completar o "L"
+            if (i == BAIXO) {
+                printf("Baixo\n");
+                printf("Esquerda\n");
+            } else {
+                printf("Baixo\n");
+            }
+            j++;
+        }
+    }
 
     return 0;
 }
